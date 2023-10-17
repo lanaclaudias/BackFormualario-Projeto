@@ -1,6 +1,7 @@
 const { validationResult } = require('express-validator');
 const nodemailer = require('nodemailer');
-const { insertContato } = require('../models/contatoModel'); // Importe a função insertContato corretamente
+const ejs = require('ejs'); // Importe o módulo EJS
+const { insertContato, getContatos } = require('../models/contatoModel'); // Certifique-se de importar as funções corretamente
 
 const transporter = nodemailer.createTransport({
   service: 'Gmail',
@@ -24,7 +25,10 @@ const contatoController = {
         from: 'sensortechcontato@gmail.com',
         to: logemail,
         subject: 'Contato',
-        text: 'Olá! Recebemos seu email, em breve entraremos em contato!!',
+        // Use EJS para criar um e-mail HTML personalizado
+        html: await ejs.renderFile('template.ejs', {
+          nome, cargo, nom_empresa, cidade, descricao,
+        }),
       };
 
       await transporter.sendMail(mailOptions);
@@ -36,6 +40,16 @@ const contatoController = {
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Erro ao criar o contato' });
+    }
+  },
+
+  listarContatos: async (req, res) => {
+    try {
+      const contatos = await getContatos(); // Chame a função para obter a lista de contatos do banco de dados
+      res.json(contatos);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Erro ao listar contatos' });
     }
   },
 };

@@ -15,5 +15,8 @@ router.post(
   ],
   contatoController.criarContato
 );
+router.get('/contatos', contatoController.listarContatos);
+
+
 
 module.exports = router;
