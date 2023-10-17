@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8"/>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+	<title>Lista Exercício 02</title>
+	
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <header>
+        <div id="divExternaCabecalho">
+            <div id="divInternaCabecalho">
+               <a href="index.html">
+                   <picture>
+                       <img src="imagens/logo_empresa-removebg-preview.png" id="imagemCabecalho">
+                   </picture>
+               </a>
+                <nav>
+                    <a href="index.html"> Início </a>
+                    <a href="index.html"> Funcionalidade </a>
+                    <a href="#contato-link"> Contatos  📞</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <center>
+        <div class="card">
+            <h4 class="title">Contato</h4>
+            <br>
+            <form action="/contato/enviar" method="post">
+                <div class="field">
+                    <input autocomplete="off" id="nome" placeholder="Nome" class="input-field" name="nome" type="text">
+
+                </div>
+
+                <div class="field">  
+                    <input autocomplete="off" id="cargo" placeholder="Cargo" class="input-field" name="cargo" type="text">
+                </div>
+
+                <div class="field">
+                    <input autocomplete="off" id="nom_empresa" placeholder="Nome da empresa" class="input-field" name="nom_empresa" type="text">
+                </div>
+
+                <div class="field">
+                    <input autocomplete="off" id="cidade" placeholder="Cidade" class="input-field" name="cidade" type="text">
+                </div>
+
+                <div class="field">
+                    <input autocomplete="off" id="logemail" placeholder="Email" class="input-field" name="logemail" type="email">
+                </div>
+
+                <div class="form_textarea">
+                    <textarea class="form_input form_textarea" placeholder="Descrição" id="descricao" name="descricao"></textarea>
+                </div>
+                <button class="btn" type="submit">Enviar</button>
+            </form>
+        </div>
+    </center>
+    
+    </section>
+
+</main>
+
+<footer>
+    <div id="rodape">
+        <div>
+            <p> E-mail: contato@projetoninho.com.br </p>
+            <p> Telefone: +55 81 9 0000-0000 </p> 
+        </div>
+        <div class="col2_rodape">
+            <hr class="linha_rodape"/>
+            © 2023 - Desenvolvido Pelos Alunos - Todos direitos Reservados.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

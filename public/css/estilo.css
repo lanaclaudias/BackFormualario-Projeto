@@ -1,0 +1,619 @@
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #0c4923;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+
+/* Sessão :: Cabeçalho */
+
+header {
+    width: 100%;
+    margin-bottom: 5%;
+    position: fixed;
+    z-index: 2;
+}
+
+#divExternaCabecalho {
+    display: flex;
+    background-color: rgb(247, 159, 7);
+    justify-content: center;    
+}
+
+#divInternaCabecalho {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(75, 170, 151);
+    border-bottom-style: solid;
+}
+
+#imagemCabecalho {
+    animation-name: fig2;
+    animation-duration: 3s;  
+    animation-fill-mode: forwards;
+}
+@keyframes fig2 {
+    from {width: 0%;}
+    to {width: 30%;}
+}
+
+nav a {
+    text-decoration: none;
+    color: #0c4923;
+    font-size: large;
+    padding: 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: rgb(75, 170, 151);
+}
+
+
+
+
+
+/* Banner Home */
+
+.banner{
+    display: flex;
+    width: 80%;
+    margin-top: 10%;
+}
+
+.banner::before{
+    content: "";
+    position: absolute;
+    z-index: -5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: ellipse(120% 69% at 15% 12%);
+    background-image: linear-gradient(160deg, rgb(247, 159, 7) 30%, rgb(247, 159, 7)100%);
+}
+
+.banner h1{
+    color: white;
+    text-transform: none;
+    font-size: xx-large;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.banner h2{
+    color: white;
+    text-transform: none;
+    font-size: large;
+    line-height: 1.2;
+    font-weight: 300;
+    margin-bottom: 5rem;
+}
+
+.imagem_banner_container{
+    display: grid;
+    grid-column: 5 / 11;
+    perspective-origin: left center;
+    perspective: 250rem;
+    transform-style: preserve-3d;
+    margin-left: 5vw;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+}
+.imagem_banner{
+    width: 50vh;
+    height: auto;
+    transform: rotateY(-32deg) rotateX(6deg);
+    backface-visibility: hidden;
+}
+.imagem_banner--1{
+    grid-column: 1 / 3;
+    grid-row: 1;
+    z-index: 5;
+    animation-name: banner-img-1;
+    animation-duration: 3s;  
+    animation-fill-mode: forwards;
+}
+@keyframes banner-img-1 {
+    from {opacity: 0.1;}
+    to {opacity: 1;}
+}
+.imagem_banner--2{
+    height: 450px;
+    grid-column: 3 / 5;
+    grid-row: 1;
+    z-index: 8;
+    animation-name: banner-img-2;
+    animation-duration: 3s;  
+    animation-fill-mode: forwards;
+}
+@keyframes banner-img-2 {
+    from {opacity: 0.1;}
+    to {opacity: 1;}
+}
+.imagem_banner--3{
+    grid-column: 5 / 7;
+    grid-row: 1;
+    z-index: 3;
+    animation-name: banner-img-3;
+    animation-duration: 3s;  
+    animation-fill-mode: forwards;
+}
+@keyframes banner-img-3 {
+    from {opacity: 0.1;}
+    to {opacity: 1;}
+}
+.imagem_banner--adjust{
+    box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Ajuste a altura conforme necessário */
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+
+/* Sessão :: projeto */
+
+#projeto {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    text-align: justify;
+    margin-top: 5%;
+}
+
+
+
+
+
+/* Sessão :: Módulos */
+
+#modulos {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 5%;
+}
+
+.modulos_content-group{
+    display: grid;
+    justify-content: center;
+    gap: 30px;
+    grid-template-columns: 45% 45%;
+    margin-top: 2%;
+}
+
+.modulo_card{
+    display: grid;
+    grid-template-rows: 30% 30%;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    transition: all .3s ease-in-out;
+}
+
+.modulo_card:hover{
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modulo_card_title{
+    font-size: x-large;
+    justify-self: center;
+    color: rgb(247, 159, 7);
+}
+
+.modulo_card_disciplinas{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-left: 5%;
+    margin-bottom: 10%;
+}
+
+.card_disciplina{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 2%;
+}
+
+
+
+
+
+/* Sessão :: Rodapé */
+
+footer {
+    display: flex;
+    margin-top: 5%;
+    background-color: #0c4923c7;;
+    justify-content: center;
+    color: #ffffffa6;
+    padding: 10px;
+    font-size: small;
+}
+
+#rodape {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.col2_rodape {
+    text-align: center;
+}
+
+.linha_rodape {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border: 1px #ffffff47 solid;
+}
+
+
+
+
+
+/* Sessão :: Equipe */
+
+#equipe {
+    width: 100%;
+    margin-top: 5%;
+}
+
+#divExternaEquipe {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(75, 170, 151);
+}
+
+#divInternaEquipe {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+}
+
+#cards-equipe-titulo {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+}
+
+.card-equipe-titulo {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgb(42, 40, 40);
+    margin: 20px;
+    width: 380px;
+    height: 20px;
+}
+
+.card-equipe-titulo-col1 {
+    width: 40%;
+}
+
+.card-equipe-titulo-col2 {
+    width: 100%;
+}
+
+#cards-equipe-descricao {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
+}
+
+.card-equipe-descricao {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    margin: 8px;
+    width: 360px;
+    height: 250px;
+    border-radius: 5px;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: #6f7270;
+}
+
+.imagem-equipe {
+    width:70%;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    position: relative;
+    z-index: 1;
+    left: 5%;
+}
+
+.texto_equipe {
+    color: #fff;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/* CONTATO */
+
+.contato {
+    margin-top: 5%;
+}
+
+.contato_heading {
+    display: grid;
+    justify-items: center;
+    padding-bottom: 3%;
+}
+
+.contato_group-content {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 600px;
+    padding: 30px;
+}
+
+.form {
+    grid-column: 1 / 2;
+    display: grid;
+}
+
+.form_group{
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 5%;
+    width: auto;
+    height: auto;
+}
+
+.form_textarea{
+    overflow: auto;
+    resize: vertical;
+    height: 15rem;
+}
+
+.form_input {
+    font-size: medium;
+    padding: 20px;
+    color: #896262;;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    display: block;
+    border-bottom: 3px solid transparent;
+    transition: all .3s;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
+    border: 2px solid #afa9a9;
+}
+
+.form_input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.form_label {
+    font-size: medium;
+    font-weight: 700;
+    margin-left: 1%;
+    margin-bottom: .7rem;
+    display: block;
+    transition: all .3s;
+    border: 245px gray #333;
+}
+
+input:placeholder-shown + label { 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4rem);
+}
+
+textarea:placeholder-shown + label { 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4rem);
+}
+
+.form_btn {
+    justify-self: center;
+    margin: 5rem 0;
+}
+
+.form_btn button {
+    padding: 1.5rem 10rem;
+    text-transform: none;
+    font-weight: 700;
+    text-align: center;
+}
+
+.btn--square {
+    border: none;
+    border-radius: 3px;
+    font-size: x-large;
+    text-decoration: none;
+    text-transform: none;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.btn--orange {
+    background-color: rgb(247, 159, 7);
+    color: white;
+    border-radius: 10px;
+}
+
+.btn--orange:hover {
+    background-color: rgb(248, 176, 112);
+}
+
+button {
+    --color: orangered;
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+   }
+   
+   button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+   }
+   
+   button:hover {
+    color: #fff;
+   }
+   
+   button:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+   }
+   
+   button:hover:before {
+    top: -30px;
+    left: -30px;
+   }
+   
+   button:active:before {
+    background: green;
+    transition: background 0s;
+   }
+
+   .card {
+    width: 1390px;
+    padding: 1.9rem 1.2rem;
+    text-align: center;
+    background: #2a2b38;
+   }
+   
+   /*Inputs*/
+   .field {
+    margin-top: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    background-color: #1f2029;
+    border-radius: 4px;
+    padding: .5em 1em;
+   }
+
+   .form_textarea{
+
+    height: 100px;
+    margin-top: .1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .05em;
+    background-color: #1f2029;
+    border-radius: 5px;
+    padding: .5em 1em;
+   }
+   
+   .input-icon {
+    height: 1em;
+    width: 1em;
+    fill: #ffeba7;
+   }
+   
+   .input-field {
+    background: none;
+    border: gray;
+    outline: none;
+    width: 100%;
+    color: #d3d3d3;
+   }
+   
+   
+   /*Text*/
+   .title {
+    margin-bottom: 1rem;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #f5f5f5;
+   }
+   
+   /*Buttons*/
+   .btn {
+    margin: 1rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: .8em;
+    text-transform: uppercase;
+    padding: 0.2em 1.2em;
+    background-color: #ffeba7;
+    color: #5e6681;
+    box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
+    transition: all .3s ease-in-out;
+   }
+   
+   .btn-link {
+    color: #f5f5f5;
+    display: block;
+    font-size: .75em;
+    transition: color .3s ease-out;
+   }
+   
+   /*Hover & focus*/
+   .field input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+   }
+   
+   .btn:hover {
+    background-color: #5e6681;
+    color: #ffeba7;
+    box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
+   }
+   
+   .btn-link:hover {
+    color: #ffeba7;
+   }
+   
