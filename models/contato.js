@@ -5,7 +5,7 @@ const pool = new Pool({
   host: 'localhost',
   database: 'back',
   password: '123456',
-  port: 5432, // Porta padrão do PostgreSQL
+  port: 5432, 
 });
 
 const createContatoTable = () => {
