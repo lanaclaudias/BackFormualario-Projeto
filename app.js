@@ -4,7 +4,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-
 // Conectar ao banco de dados PostgreSQL
 const { Pool } = require('pg');
 
@@ -25,7 +24,7 @@ pool.connect((err) => {
      // Configurar rota para lidar com solicitações POST do formulário
      app.post('/contato/enviar', (req, res) => {
       const { nome, cargo, nom_empresa, cidade, logemail, descricao } = req.body;
-
+console.log(req.body)
       // Inserir os dados no banco de dados
       const query = 'INSERT INTO contatos (nome, cargo, nom_empresa, cidade, logemail, descricao) VALUES ($1, $2, $3, $4, $5, $6)';
 pool.query(query, [nome, cargo, nom_empresa, cidade, logemail, descricao], (error, result) => {
@@ -47,5 +46,5 @@ pool.query(query, [nome, cargo, nom_empresa, cidade, logemail, descricao], (erro
 });
 
 module.exports = {
-  pool,
+  pool,contatoRoutes
 };

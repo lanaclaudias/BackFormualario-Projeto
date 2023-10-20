@@ -5,18 +5,18 @@ const pool = new Pool({
   host: 'localhost',
   database: 'back',
   password: '123456',
-  port: 5432, 
+  port: 5432,
 });
-
+/*
 const createContatoTable = () => {
   const query = `
     CREATE TABLE IF NOT EXISTS contatos (
       id SERIAL PRIMARY KEY,
-      nome TEXT,
-      cargo TEXT,
-      nom_empresa TEXT,
-      cidade TEXT,
-      logemail TEXT,
+      nome STRING,
+      cargo STRING,
+      nom_empresa STRING,
+      cidade STRING,
+      logemail STRING,
       descricao TEXT
     )
   `;
@@ -30,22 +30,26 @@ const createContatoTable = () => {
 };
 
 createContatoTable();
-
-const insertContato = (contato) => {
+*/
+const insertContato = async (contato) => {
   const { nome, cargo, nom_empresa, cidade, logemail, descricao } = contato;
   const query = `
     INSERT INTO contatos (nome, cargo, nom_empresa, cidade, logemail, descricao)
     VALUES ($1, $2, $3, $4, $5, $6)
   `;
-  pool.query(query, [nome, cargo, nom_empresa, cidade, logemail, descricao], (err, res) => {
-    if (err) {
-      console.error('Erro ao inserir um contato:', err);
-    } else {
-      console.log('Contato inserido com sucesso.');
-    }
-  });
+
+  try {
+    const result = await pool.query(query, [nome, cargo, nom_empresa, cidade, logemail, descricao]);
+    console.log('Contato inserido com sucesso.');
+    return result;
+  } catch (error) {
+    console.error('Erro ao inserir um contato:', error);
+    throw error;
+  }
 };
 
 module.exports = {
   insertContato,
+  createTable: createContatoTable,
+  pool,
 };

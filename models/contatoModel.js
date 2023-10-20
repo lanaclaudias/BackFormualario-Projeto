@@ -13,11 +13,11 @@ const createContatoTable = () => {
   const query = `
     CREATE TABLE IF NOT EXISTS contatos (
       id SERIAL PRIMARY KEY,
-      nome TEXT,
-      cargo TEXT,
-      nom_empresa TEXT,
-      cidade TEXT,
-      logemail TEXT,
+      nome STRING,
+      cargo STRING,
+      nom_empresa STRING,
+      cidade STRING,
+      logemail STRING,
       descricao TEXT
     )
   `;
